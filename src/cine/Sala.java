@@ -89,8 +89,6 @@ public class Sala {
             sesiones.add(pos, sesion);
         }
 
-
-
     }
 
     public void borrarSesion (String horaSesion){
