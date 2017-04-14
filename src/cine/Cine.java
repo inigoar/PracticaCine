@@ -28,12 +28,10 @@ public class Cine {
 
     }
 
-    public String getPeliculas (){
-        String Peliculas = new String("");
-        String aux;
+    public String[] getPeliculas (){
+        String[] Peliculas = new String[sala.length];
         for (int i = 0; i < sala.length; i++){
-            aux = sala[i].getPelicula();
-            Peliculas = Peliculas + aux;
+            Peliculas[i] = sala[i].getPelicula();
         }
         return Peliculas;
 
@@ -65,6 +63,7 @@ public class Cine {
     }
 
     public void borrarSesion (int sala, String horaSesion){
+        this.sala[sala].borrarSesion(horaSesion);
 
 
     }
