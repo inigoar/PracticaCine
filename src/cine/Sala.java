@@ -11,7 +11,6 @@ public class Sala {
     private ArrayList<Sesion> sesiones;
     private int filas;
     private int columnas;
-    private String[] horasSesiones;
 
     public Sala (String pelicula, String[] horasSesiones, int filas, int columnas){
 
@@ -29,7 +28,6 @@ public class Sala {
         }
         this.filas = filas;
         this.columnas = columnas;
-        this.horasSesiones = horasSesiones;
 
     }
 
@@ -44,6 +42,13 @@ public class Sala {
     }
 
     public String[] getHorasDeSesionesDeSala (){
+        String[] horasSesiones = new String[sesiones.size()];
+        String aux;
+        for (int i = 0; i < sesiones.size(); i++){
+            aux = sesiones.get(i).getHora();
+            horasSesiones[i] = aux;
+        }
+
         return horasSesiones;
 
     }

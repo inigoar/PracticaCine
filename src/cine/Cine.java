@@ -23,11 +23,19 @@ public class Cine {
 
     }
 
-    public char[] getEstadoSesion (int sala, int sesion){
+    public char[][] getEstadoSesion (int sala, int sesion){
+        return this.sala[sala].getEstadoSesion(sesion);
 
     }
 
     public String getPeliculas (){
+        String Peliculas = new String("");
+        String aux;
+        for (int i = 0; i < sala.length; i++){
+            aux = sala[i].getPelicula();
+            Peliculas = Peliculas + aux;
+        }
+        return Peliculas;
 
     }
 
@@ -36,14 +44,17 @@ public class Cine {
     }
 
     public String recogerEntradas (int id, int sala, int sesion){
+        return this.sala[sala].recogerEntradas(id, sesion);
 
     }
 
     public int getButacasDisponiblesSesion (int sala, int sesion){
+        return this.sala[sala].getButacasDisponiblesSesion(sesion);
 
     }
 
     public ButacasContiguas recomendarButacasContiguas (int noButacas, int sala, int sesion){
+        return this.sala[sala].recomendarButacasContiguas(noButacas, sesion);
 
     }
 
