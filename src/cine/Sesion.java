@@ -80,7 +80,7 @@ public class Sesion {
 
     public ButacasContiguas recomendarButacasContiguas (int noButacas){
         int butacasDisponibles = 0;
-        //ButacasContiguas butacasContiguas = null;
+        ButacasContiguas butacasContiguas = null;
         for (int i = (estadoAsientos.length+1)/2+1; i < estadoAsientos.length || butacasDisponibles == noButacas; i++){
             for (int j = estadoAsientos[0].length; j >= 1; j--){
                 if (estadoAsientos[i][j] == 0){
@@ -92,19 +92,30 @@ public class Sesion {
                         }
                     }
                 }
-                /**if (butacasDisponibles == noButacas){
+                if (butacasDisponibles == noButacas){
                     ButacasContiguas aux = new ButacasContiguas(i,j,noButacas);
                     butacasContiguas = aux;
-                }*/
-                if (butacasDisponibles == noButacas){
-                    ButacasContiguas butacasContiguas = new ButacasContiguas(i,j,noButacas);
                 }
             }
         }
-        // TODO 2ª mitad de la sala
-
+        for (int i = (estadoAsientos.length+1)/2; i > 0 || butacasDisponibles == noButacas; i--){
+            for (int j = estadoAsientos[0].length; j >= 1; j--){
+                if (estadoAsientos[i][j] == 0){
+                    for (int k = 0; k < noButacas ;k++){
+                        if (estadoAsientos[i][j+k] == 0){
+                            butacasDisponibles++;
+                        }else{
+                            butacasDisponibles=0;
+                        }
+                    }
+                }
+                if (butacasDisponibles == noButacas){
+                    ButacasContiguas aux = new ButacasContiguas(i,j,noButacas);
+                    butacasContiguas = aux;
+                }
+            }
+        }
         return butacasContiguas;
-
     }
 
     public void comprarEntradasRecomendadas (ButacasContiguas butacas){
