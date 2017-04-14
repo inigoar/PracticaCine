@@ -28,12 +28,12 @@ public class Sala {
     }
 
     public void comprarEntrada (int sesion, int fila, int columna){
-
+        sesiones.get(sesion).comprarEntrada(fila, columna);
 
     }
 
     public int getIdEntrada (int sesion, int fila, int columna){
-        return sesiones.get(sesion).getIdEntrada(fila,columna);
+        return sesiones.get(sesion).getIdEntrada(fila, columna);
 
     }
 
@@ -43,30 +43,37 @@ public class Sala {
     }
 
     public char[][] getEstadoSesion (int sesion){
+        return sesiones.get(sesion).getEstadoSesion();
 
     }
 
     public String getPelicula (){
+        return pelicula;
 
     }
 
     public String recogerEntradas (int id, int sesion){
+        return sesiones.get(sesion).recogerEntradas(id);
 
     }
 
     public int getButacasDisponiblesSesion (int sesion){
+        return sesiones.get(sesion).getButacasDisponiblesSesion();
 
     }
 
     public ButacasContiguas recomendarButacasContiguas (int noButacas, int sesion){
+        return sesiones.get(sesion).recomendarButacasContiguas(noButacas);
 
     }
 
     public void comprarEntradasRecomendadas (int sesion, ButacasContiguas butacas){
+        sesiones.get(sesion).comprarEntradasRecomendadas(butacas);
 
     }
 
     public void incluirSesion (String horaSesion){
+
 
     }
 
