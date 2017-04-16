@@ -1,0 +1,83 @@
+public class Sesion {
+	private String hora;
+	private int[][] estadoAsientos;
+	private int asientosDisponibles;
+	private int sigIdCompra;
+
+	public  Sesion(String hora, int filas, int columnas){
+		this.hora = hora;
+		this.asientosDisponibles = filas*columnas;
+		this.sigIdCompra = 1;
+		this.estadoAsientos = new int[filas][columnas];
+
+	}
+	//Metodo getter de hora.
+public String getHora(){
+	return hora;
+	}
+	//Metodo getter de IdEntrada
+public  int getIdEntrada(int fila, int columna){
+	return estadoAsientos[fila-1][columna-1];
+}
+	//Metodo que representa los asientos disponibles.
+public char[][] getEstadoSesion (){
+	char[][] aux = new char[estadoAsientos.length][estadoAsientos[0].length];
+	for (int i=0; i<estadoAsientos.length; i++){
+		for (int j=0; j<estadoAsientos[0].length; j++){
+		if (estadoAsientos[i][j] == 0)
+			aux[i][j]= 'O';
+		else 
+			aux[i][j] = 'X';
+	}
+}
+return aux;
+}
+	//Metodo que devuelve los asientos disponibles.
+public int getButacasDisponiblesSesion(){
+	return asientosDisponibles;
+}
+// Suponiendo un Id valido, metodo que muestra los asientos de un Id.
+public String recogerEntradas(int id){
+	String aux = hora+"--";
+	for (int i=0; i<estadoAsientos.length; i++){
+		for (int j=0; i<estadoAsientos[i].length; j++){
+		if (estadoAsientos[i][j] == id)
+			aux= aux  + "fila"+i+"columna"+j+"--" ;
+}
+	}
+		return aux;
+	
+}
+public void comprarEntrada(int fila, int columna){
+	estadoAsientos[fila-1][columna-1]=sigIdCompra;
+	sigIdCompra++;
+	asientosDisponibles--;
+	
+		
+}
+/*public ButacasContiguas recomendarButacasContiguas(int noButacas){
+	for (int i=estadoAsientos.length+1/2+1; i<estadoAsientos.length; i++){
+		int aux= 0;
+		int col = 0;
+		for(int j=0; j<estadoAsientos[i].length&&aux<noButacas; j++){
+			if (estadoAsientos[i][j]==0)
+				aux=0;
+				col = 0;
+			else
+				aux = aux + 1;
+				col=j;
+				
+		}
+*/
+
+public ButacasContiguas recomendarButacasContiguas(int noButacas)
+{
+	return null;
+}
+public void comprarEntradasRecomendadas(ButacasContiguas butacas){
+
+
+}
+
+}
+
