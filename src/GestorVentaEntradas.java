@@ -69,7 +69,7 @@ public class GestorVentaEntradas {
 									ventanilla.getFila(), 
 									ventanilla.getColumna()));
 				} else
-					System.out.println("La sesion seleccionada está llena");
+					System.out.println("La sesion seleccionada estï¿½ llena");
 				break;
 
 			case RECOGER :
@@ -120,7 +120,7 @@ public class GestorVentaEntradas {
 										butacas.getFila(), 
 										butacas.getColumna()));
 					} else
-						System.out.println("Has descartado la recomendación");
+						System.out.println("Has descartado la recomendaciï¿½n");
 
 				} else
 					System.out.println("No hay tantas butacas disponibles contiguas");

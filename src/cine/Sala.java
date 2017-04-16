@@ -44,7 +44,7 @@ public class Sala {
     public String[] getHorasDeSesionesDeSala (){
         String[] horasSesiones = new String[sesiones.size()];
         String aux;
-        for (int i = 0; i <= sesiones.size()-1; i++){
+        for (int i = 0; i < sesiones.size(); i++){
             aux = sesiones.get(i).getHora();
             horasSesiones[i] = aux;
         }

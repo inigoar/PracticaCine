@@ -13,7 +13,7 @@ public class Sesion {
     public Sesion (String hora, int filas, int columnas){
 
         this.hora = hora;
-        estadoAsientos = new int[filas][columnas];
+        this.estadoAsientos = new int[filas][columnas];
         this.asientosDisponibles = filas * columnas;
         this.sigIdCompra = 1;
     }

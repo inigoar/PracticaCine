@@ -87,8 +87,7 @@ public class VentanillaVirtualAdministrador {
 					Integer.parseInt(partes[1]) >=0 && Integer.parseInt(partes[1]) < 60);
 			if (seguir)
 				System.out.println("Esa sesion ya existe o tiene un formato incorrecto");
-		} while (seguir);		
-		
+		} while (seguir);
 	}
 	
 	public String getHora(){

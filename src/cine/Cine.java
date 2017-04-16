@@ -16,15 +16,15 @@ public class Cine {
     }
 
     public void comprarEntrada (int sala, int sesion, int fila, int columna){
-    	this.sala[sala].comprarEntrada(sesion, fila, columna);
+    	this.sala[sala-1].comprarEntrada(sesion-1, fila, columna);
     }
 
     public int getIdEntrada (int sala, int sesion, int fila, int columna){
-    	return this.sala[sala].getIdEntrada(sesion, fila, columna);
+    	return this.sala[sala-1].getIdEntrada(sesion-1, fila, columna);
     }
 
     public char[][] getEstadoSesion (int sala, int sesion){
-        return this.sala[sala].getEstadoSesion(sesion);
+        return this.sala[sala-1].getEstadoSesion(sesion-1);
 
     }
 
@@ -38,32 +38,32 @@ public class Cine {
     }
 
     public String[] getHorasDeSesionesDeSala (int sala){
-    	return this.sala[sala].getHorasDeSesionesDeSala();
+    	return this.sala[sala-1].getHorasDeSesionesDeSala();
     }
 
     public String recogerEntradas (int id, int sala, int sesion){
-    	return this.sala[sala].recogerEntradas(id, sesion);
+    	return this.sala[sala-1].recogerEntradas(id, sesion-1);
     }
 
     public int getButacasDisponiblesSesion (int sala, int sesion){
-    	return this.sala[sala].getButacasDisponiblesSesion(sesion) ;
+    	return this.sala[sala-1].getButacasDisponiblesSesion(sesion-1) ;
     }
 
     public ButacasContiguas recomendarButacasContiguas (int noButacas, int sala, int sesion){
-    	return this.sala[sala].recomendarButacasContiguas(noButacas, sesion);
+    	return this.sala[sala-1].recomendarButacasContiguas(noButacas, sesion-1);
 
     }
 
     public void comprarEntradasRecomendadas (int sala, int sesion, ButacasContiguas butacas){
-    	this.sala[sala].comprarEntradasRecomendadas(sesion, butacas);
+    	this.sala[sala-1].comprarEntradasRecomendadas(sesion-1, butacas);
     }
 
     public void incluirSesion (int sala, String horaSesion){
-    	this.sala[sala].incluirSesion(horaSesion);
+    	this.sala[sala-1].incluirSesion(horaSesion);
     }
 
     public void borrarSesion (int sala, String horaSesion){
-        this.sala[sala].borrarSesion(horaSesion);
+        this.sala[sala-1].borrarSesion(horaSesion);
 
 
     }
