@@ -1,0 +1,57 @@
+
+public class Sala {
+	private String pelicula;
+	private Sesion[] sesiones;
+	
+	public Sala(String pelicula, String[] horasSesiones, int filas, int columnas) {
+		this.pelicula = pelicula;
+		this.sesiones = new Sesion[horasSesiones.length];
+		for(int i=0; i<horasSesiones.length;i++){
+			sesiones[i]= new Sesion(horasSesiones[i],filas,columnas);
+		}
+
+	}
+	
+	
+	public String getPelicula(){
+		return pelicula;
+	}
+	
+	public int getIdEntrada(int sesion, int fila, int columna)
+	{
+		return sesiones[sesion-1].getIdEntrada(fila,columna);
+	}
+	
+	public String[] getHorasDeSesionesDeSala(){
+		String[] aux = new String[sesiones.length];
+		for (int i=0; i<sesiones.length; i++){
+			aux[i] = sesiones[i].getHora();
+		}
+		return aux;
+	}
+	
+	public char[][] getEstadoSesion(int sesion)
+	{
+		return sesiones[sesion-1].getEstadoSesion();
+	}
+	public int getButacasDisponiblesSesion(int sesion)
+	{
+		return sesiones[sesion-1].getButacasDisponiblesSesion();
+	}
+	public String recogerEntradas(int id, int sesion)
+	{
+		return pelicula+sesiones[sesion-1].recogerEntradas(id);
+	}
+	public void comprarEntrada(int sesion, int fila, int columna)
+	{
+		sesiones[sesion-1].comprarEntrada(fila, columna);
+	}
+	public ButacasContiguas recomendarButacasContiguas(int noButacas, int sesion)
+	{
+		return null;
+	}
+	public void comprarEntradasRecomendadas(int sesion, ButacasContiguas Butacas)
+	{
+		
+	}
+}
