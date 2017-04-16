@@ -1,0 +1,49 @@
+public class Cine {
+	private String nombre;
+	private Sala[] salas;
+
+	public Cine(String nombre, Sala[] salas) {
+		this.nombre = nombre;
+		this.salas = salas;
+	}
+	/*void comprarEntrada (int sala, int sesion, int fila, int columna){
+		if (Sesion.estadoAsientos[fila][columna] == "X")
+			
+	}
+	*/
+	public int getIdEntrada(int sala, int sesion, int fila, int columna){
+		return salas[sala-1].getIdEntrada(sesion,fila,columna);
+	}	
+	public String[] getPeliculas(){
+		String[] peliculas = new String[salas.length];
+		for(int i =0; i<peliculas.length; i++){
+			peliculas[i]= salas[i].getPelicula();
+		}
+		return peliculas;
+	}
+	public String[] getHorasDeSesionesDeSala(int sala){
+		return salas[sala-1].getHorasDeSesionesDeSala();
+	}
+	public char[][] getEstadoSesion(int sala, int sesion){
+		return salas[sala-1].getEstadoSesion(sesion);
+	}
+  
+	public int getButacasDisponiblesSesion(int sala, int sesion)
+  {
+		return salas[sala-1].getButacasDisponiblesSesion(sesion);
+	}
+	public String recogerEntradas(int id, int sala, int sesion){
+		return nombre+salas[sala-1].recogerEntradas(id, sesion);
+	}
+	public void comprarEntrada(int sala,int sesion, int fila, int columna){
+		salas[sala-1].comprarEntrada(sesion, fila, columna);
+	}
+  
+	public ButacasContiguas recomendarButacasContiguas(int noButacas, int sala, int sesion){
+		return null;
+	}
+  
+	public void comprarEntradasRecomendadas(int sala, int sesion, ButacasContiguas butacas){
+		
+	}
+}
